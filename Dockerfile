@@ -6,6 +6,7 @@ FROM openshift/base-centos7
 MAINTAINER Ben Parees <bparees@redhat.com>
 
 EXPOSE 8080
+EXPOSE 9090
 
 ENV WILDFLY_VERSION=9.0.2 \
     WILDFLY_VERSION_BIN=9.0.2.Final \
@@ -14,6 +15,7 @@ ENV WILDFLY_VERSION=9.0.2 \
 LABEL io.k8s.description="Platform for building and running JEE applications on WildFly 9.0" \
       io.k8s.display-name="WildFly 9.0" \
       io.openshift.expose-services="8080:http" \
+      io.openshift.expose-services="9990:http" \
       io.openshift.tags="builder,wildfly,wildfly90" \
       io.openshift.s2i.destination="/opt/s2i/destination" \
       com.redhat.deployments-dir="/wildfly/standalone/deployments"
